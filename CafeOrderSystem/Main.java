@@ -14,13 +14,13 @@ public class Main {
             System.out.println("1. แสดงเมนูสินค้า / Show product menu");
             System.out.println("2. ออกจากระบบ / Log out");
             System.out.println("เลือกเมนู / Select menu:");
-            int choice = scanner.nextInt();
+            String choice = scanner.nextLine();
 
             switch (choice) {
-                case 1:
+                case "1":
                     menuManager.showMenu();
                     break;
-                case 2:
+                case "2":
                     System.out.println("ออกจากระบบ / Log out...");
                     return;
                 default:
