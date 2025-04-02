@@ -11,9 +11,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("\n=== Shop system ===");
-            System.out.println("1. แสดงเมนูสินค้า / Show product menu");
-            System.out.println("2. ออกจากระบบ / Log out");
-            System.out.println("เลือกเมนู / Select menu:");
+            System.out.println("1.Show product menu");
+            System.out.println("2.Log out");
+            System.out.print("Select menu: ");
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -21,10 +21,10 @@ public class Main {
                     menuManager.showMenu();
                     break;
                 case "2":
-                    System.out.println("ออกจากระบบ / Log out...");
+                    System.out.println("Log out...");
                     return;
                 default:
-                    System.out.println("เลือกเมนูไม่ถูกต้อง / Selected the wrong menu!");
+                    System.out.println("Selected the wrong menu!");
             }
         }
     }

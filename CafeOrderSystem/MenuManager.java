@@ -17,10 +17,11 @@ public class MenuManager {
     }
 
     public void showMenu() {
-        System.out.println("=== เมนูสินค้า ===");
+        System.out.println("=== Product menu ===");
         for (MenuItem item : menuList) {
-            System.out.println(item.getName() + " - " + item.getPrice() + " บาท");
+            System.out.println(item.getName() + " - " + item.getPrice() + " baht");
         }
+        
     }
     
     // private final String MENU_FILE = "C:\\Users\\Escanor K\\CafeOrderSystem\\menu.txt"; // สำหรับ Windows
