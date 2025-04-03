@@ -21,6 +21,7 @@ public class Main {
                     menuManager.showMenu();
                     break;
                 case "2":
+                    System.out.println();
                     System.out.println("Log out...");
                     return;
                 default:
