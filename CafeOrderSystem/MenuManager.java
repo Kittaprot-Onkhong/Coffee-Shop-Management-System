@@ -33,7 +33,7 @@ public class MenuManager {
         for (MenuItem item : menuList) {
             System.out.printf("%d. %-15s %6.2f ฿ (%s)\n", i++, item.getName(), item.getPrice(), item.getType());
         }
-        System.out.println("<<------------------------------>>");
+        
     }
 
     public MenuItem getMenuItem(int index) {

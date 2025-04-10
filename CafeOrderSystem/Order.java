@@ -30,4 +30,15 @@ public class Order {
         System.out.printf("Total:            %.2f ฿\n", total);
         System.out.println("========================\n");
     }
+
+    public void printCurrentOrder() {
+        System.out.println("------- Current Order -------");
+        double total = 0;
+        int i = 1;
+        for (MenuItem item : orderList) {
+            System.out.printf("%d. %-15s %6.2f ฿\n", i++, item.getName(), item.getPrice());
+            total += item.getPrice();
+        }
+        System.out.println("-----------------------------");
+    }
 }

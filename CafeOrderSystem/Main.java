@@ -19,9 +19,16 @@ public class Main {
             return;
         }
 
-        while (true) {
+        // แสดงเมนูแค่ครั้งเดียว
             menuManager.showMenu();
-            System.out.print("Enter menu number to order (0 to finish): ");
+            System.out.println("<<----------|----+----|-------->>");
+            System.out.println("           | 0. Finish |           ");
+            System.out.println("<<----------|----+----|--------->>");
+
+        while (true) {
+
+            // ข้อความที่ให้ลูกค้าเลือกเมนู
+            System.out.print("Enter menu number to order : ");
             int choice;
 
             try {
@@ -31,12 +38,14 @@ public class Main {
                 continue;
             }
 
-            if (choice == 0) break;
+            if (choice == 0) break; // เมื่อเลือก 0 จะออกจากลูป
 
             MenuItem selected = menuManager.getMenuItem(choice);
             if (selected != null) {
                 order.addItem(selected);
                 System.out.println("Added: " + selected.getName());
+                System.out.println("\nCurrent Order:");
+                order.printCurrentOrder(); // ตะกร้าสินค้า
             } else {
                 System.out.println("Invalid menu number.");
             }
