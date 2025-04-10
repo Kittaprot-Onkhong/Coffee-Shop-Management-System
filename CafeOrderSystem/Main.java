@@ -1,32 +1,52 @@
 package CafeOrderSystem;
 
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         MenuManager menuManager = new MenuManager();
-        // menuManager.loadMenu();//อันนี้คือโหลดเมนูจากไฟล์มา
-    
+        Order order = new Order();
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("\n=== Shop system ===");
-            System.out.println("1.Show product menu");
-            System.out.println("2.Log out");
-            System.out.print("Select menu: ");
-            String choice = scanner.nextLine();
 
-            switch (choice) {
-                case "1":
-                    menuManager.showMenu();
-                    break;
-                case "2":
-                    System.out.println();
-                    System.out.println("Log out...");
-                    return;
-                default:
-                    System.out.println("Selected the wrong menu!");
+        System.out.println("Welcome to the Coffee Shop!");
+        menuManager.showMenu();
+
+        System.out.print("Would you like to order something? (y/n): ");
+        String answer = scanner.nextLine().trim().toLowerCase();
+
+        if (!answer.equals("y")) {
+            System.out.println("Thank you! Have a nice day :)");
+            return;
+        }
+
+        while (true) {
+            menuManager.showMenu();
+            System.out.print("Enter menu number to order (0 to finish): ");
+            int choice;
+
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                continue;
             }
+
+            if (choice == 0) break;
+
+            MenuItem selected = menuManager.getMenuItem(choice);
+            if (selected != null) {
+                order.addItem(selected);
+                System.out.println("Added: " + selected.getName());
+            } else {
+                System.out.println("Invalid menu number.");
+            }
+        }
+
+        if (order.isEmpty()) {
+            System.out.println("No order placed. Thank you!");
+        } else {
+            order.printReceipt();
+            System.out.println("Thank you for your order!");
         }
     }
 }
