@@ -7,17 +7,26 @@ public class Main {
         MenuManager menuManager = new MenuManager();
         Order order = new Order();
         Scanner scanner = new Scanner(System.in);
-
+        
+        System.out.println();
         System.out.println("Welcome to the Coffee Shop!");
         menuManager.showMenu();
-
+        boolean yn = true;
+        while (yn){
         System.out.print("Would you like to order something? (y/n): ");
         String answer = scanner.nextLine().trim().toLowerCase();
-
-        if (!answer.equals("y")) {
+        
+       
+        if(answer.equals("yes")||answer.equals("y")){
+            yn = false;
+        }
+        else if (answer.equals("no")||answer.equals("n")) {
             System.out.println("Thank you! Have a nice day :)");
             return;
-        }
+        } else {
+            System.out.println("Please type only y or n");
+            yn = true;
+        }}
 
         // แสดงเมนูแค่ครั้งเดียว
             menuManager.showMenu();
