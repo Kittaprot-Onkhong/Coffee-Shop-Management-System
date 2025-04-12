@@ -25,6 +25,7 @@ public class Main {
             return;
         } else {
             System.out.println("Please type only y or n");
+            System.out.println();
             yn = true;
         }}
 
