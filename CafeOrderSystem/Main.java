@@ -12,7 +12,7 @@ public class Main {
 
         // แสดงเมนูรอบแรก
         menuManager.showMenu();
-        System.out.println("<<------------------------------>>");
+        System.out.println("<<------------------------------->>");
 
         // ถามลูกค้าว่าจะเริ่มสั่งไหม
         String answer = "";
