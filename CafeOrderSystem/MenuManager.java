@@ -12,21 +12,21 @@ public class MenuManager {
     }
 
     private void initSampleMenu() {
-        // Coffee
+        // เครื่องดื่ม
         menuList.add(new Coffee("Latte", 50));
         menuList.add(new Coffee("Espresso", 45));
         menuList.add(new Coffee("Cappuccino", 55));
         menuList.add(new Coffee("Americano", 40));
         menuList.add(new Coffee("Mocha", 60));
 
-        // Snacks
+        // ขนม
         menuList.add(new Snack("Brownie", 40));
         menuList.add(new Snack("Croissant", 35));
         menuList.add(new Snack("Muffin", 30));
         menuList.add(new Snack("Cookie", 25));
         menuList.add(new Snack("Donut", 20));
     }
-
+    //แสดงเมนู
     public void showMenu() {
         System.out.println("\n<<----------|| MENU ||---------->>");
         int i = 1;
