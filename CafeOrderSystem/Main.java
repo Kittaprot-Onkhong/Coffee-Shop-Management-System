@@ -60,7 +60,7 @@ public class Main {
                 }
                 boolean editing = true;
                 while (editing) {
-                    System.out.println("\nCurrent Order:");
+                    System.out.println();
                     order.printCurrentOrder();
                     System.out.print("Enter the order number to remove (or 0 to stop): ");
                     int removeChoice;
@@ -87,7 +87,7 @@ public class Main {
             if (selected != null) {
                 order.addItem(selected);
                 System.out.println("Added: " + selected.getName());
-                System.out.println("\nCurrent Order:");
+                System.out.println();
                 order.printCurrentOrder();
             } else {
                 System.out.println("Invalid menu number.");
@@ -112,7 +112,7 @@ public class Main {
             System.out.println("No order placed. Thank you!"); 
         } else { 
             order.printReceipt(); // แสดงใบเสร็จบนหน้าจอ 
-            
+
             // หลังจากแสดงใบเสร็จแล้ว
             ReceiptWriter.writeToFile(order, "receipt.txt");  // ตรวจสอบว่ามีการเรียกฟังก์ชันนี้
         }

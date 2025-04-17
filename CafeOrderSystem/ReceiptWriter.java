@@ -30,6 +30,7 @@ public class ReceiptWriter {
     
             writer.close();  // ปิดไฟล์หลังการเขียน
             System.out.println("Receipt saved to " + filename);  // แจ้งให้ผู้ใช้ทราบ
+            System.out.println();
         } catch (IOException e) {
             System.out.println("Error writing receipt: " + e.getMessage());
         }
