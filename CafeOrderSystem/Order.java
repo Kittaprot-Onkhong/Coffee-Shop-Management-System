@@ -53,5 +53,9 @@ public class Order {
             return true;
         }
         return false;
+        
+    }
+    public List<MenuItem> getItems() { 
+        return orderList; 
     }
 }

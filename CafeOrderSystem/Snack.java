@@ -1,12 +1,13 @@
 package CafeOrderSystem;
 
-public class Snack extends MenuItem{
-    public Snack(String name, double price) {
-        super(name, price);
+public class Snack extends MenuItem {
+    public Snack(String name, double price ,String type) {
+        super(name, price,type);
     }
-    
+
     @Override
-    public String getType(){
-        return "Candy";
+    public String getCategory() {
+        return "Snack"; // override แสดงหมวด
     }
 }
+

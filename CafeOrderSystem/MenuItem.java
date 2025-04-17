@@ -1,23 +1,28 @@
 package CafeOrderSystem;
 
 public abstract class MenuItem {
-    protected String name;
-    protected double price;
+    private String name;
+    private double price;
+    private String type;
 
-    public MenuItem (String name, double price){
+    public MenuItem(String name, double price ,String type) {
         this.name = name;
         this.price = price;
+        this.type = type;
     }
+
+    public abstract String getCategory(); // Polymorphism
+
     public String getName() {
         return name;
-    }   
-    public double getPrice(){
+    }
+
+    public double getPrice() {
         return price;
     }
-    public abstract String getType();
-
-    @Override
-    public String toString(){
-        return getType() + ": " + name + " - " + price + " ฿ ";
+    
+    public String getType() {
+        return type;
     }
 }
+

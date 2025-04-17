@@ -16,16 +16,15 @@ public class Main {
 
         // ถามลูกค้าว่าจะเริ่มสั่งไหม
         String answer = "";
-        while (!answer.equals("y") && !answer.equals("n")) {
+        while (!answer.equals("y") && !answer.equals("n")&& !answer.equals("yes") && !answer.equals("no")) {
             System.out.print("Would you like to order something? (y/n): ");
             answer = scanner.nextLine().trim().toLowerCase();
-        if (!answer.equals("y") && !answer.equals("n")) {
+        if (!answer.equals("y") && !answer.equals("n")&& !answer.equals("yes") && !answer.equals("no")) {
             System.out.println("Please enter only 'y' or 'n'.");
             System.out.println();
             }
-        }
-
-        if (!answer.equals("y")) {
+        }    
+        if (answer.equals("n")||answer.equals("no")) {
             System.out.println("Thank you! Have a nice day :)");
             return;
         }
@@ -45,10 +44,11 @@ public class Main {
             try {
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
+                System.out.println();
                 System.out.println("Invalid input. Please enter a number.");
                 continue;
             }
-
+            
             if (choice == 0) {
                 // จบการสั่งซื้อ
                 break;
@@ -76,7 +76,7 @@ public class Main {
                     if (order.removeItem(removeChoice)) {
                         System.out.println("Item removed.");
                     } else {
-                        System.out.println("Invalid item number.");
+                        System.out.println("Invalid item number."); // ใส่เลขเพิ่ม
                     }
                 }
                 continue; // กลับไปเลือกเมนูใหม่
@@ -97,17 +97,24 @@ public class Main {
             // ถามว่าจะเพิ่มเมนูอีกไหม
             System.out.print("Do you want to order more? (y/n): ");
             String more = scanner.nextLine().trim().toLowerCase();
-            if (!more.equals("y")) {
+            if (more.equals("y")|| more.equals("yes")) {
+                ordering = true;
+            } else if (more.equals("n")|| more.equals("no")){
                 ordering = false;
+            } else {
+                System.out.println();
+                System.out.println("Please enter only 'y' or 'n'.");
             }
         }
 
         // แสดงใบเสร็จ
         if (order.isEmpty()) {
-            System.out.println("No order placed. Thank you!");
-        } else {
-            order.printReceipt();
-            System.out.println("Thank you for your order!");
+            System.out.println("No order placed. Thank you!"); 
+        } else { 
+            order.printReceipt(); // แสดงใบเสร็จบนหน้าจอ 
+            
+            // หลังจากแสดงใบเสร็จแล้ว
+            ReceiptWriter.writeToFile(order, "receipt.txt");  // ตรวจสอบว่ามีการเรียกฟังก์ชันนี้
         }
     }
 }
