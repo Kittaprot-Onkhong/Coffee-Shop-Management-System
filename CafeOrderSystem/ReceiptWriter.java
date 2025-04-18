@@ -1,18 +1,22 @@
-package CafeOrderSystem;
+package CafeOrderSystem; //Write from file 
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;              // ✅ เพิ่มตรงนี้
-import java.time.format.DateTimeFormatter;  // ✅ และตรงนี้
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 
 
 public class ReceiptWriter { 
-    public static void writeToFile(Order order, String filename) {
+    public static void writeToFile(Order order, String filename) { 
         try {
             FileWriter writer = new FileWriter(filename);  // เปิดไฟล์สำหรับเขียน
             writer.write("========= Coffee Shop Receipt =========\n");
-            writer.write("Date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")) + "\n");
+            writer.write("Date: " + 
+    ZonedDateTime.now(ZoneId.of("Asia/Bangkok"))
+        .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")) + "\n");
             writer.write("----------------------------------------\n");
     
             List<MenuItem> items = order.getItems();

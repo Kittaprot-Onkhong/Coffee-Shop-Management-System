@@ -1,4 +1,4 @@
-package CafeOrderSystem;
+package CafeOrderSystem; // MenuItem.java is Interface. Polymorphism
 
 public abstract class MenuItem {
     private String name;

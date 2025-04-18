@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         MenuManager menuManager = new MenuManager();
         Order order = new Order();
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); // Input from keyboard, 
 
         System.out.println("Welcome to the Coffee Shop!");
 
@@ -41,7 +41,7 @@ public class Main {
             System.out.print("Enter menu number to order: ");
             int choice;
 
-            try {
+            try { //Exception
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println();

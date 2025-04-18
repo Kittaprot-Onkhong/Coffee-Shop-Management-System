@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuManager {
-    private List<MenuItem> menuList;
+    private List<MenuItem> menuList; //Collection
 
     public MenuManager() {
         menuList = new ArrayList<>();

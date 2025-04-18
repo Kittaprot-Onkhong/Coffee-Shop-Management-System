@@ -1,4 +1,4 @@
-package CafeOrderSystem;
+package CafeOrderSystem; //Snack.java is Inheritance Polymorphism
 
 public class Snack extends MenuItem {
     public Snack(String name, double price ,String type) {
