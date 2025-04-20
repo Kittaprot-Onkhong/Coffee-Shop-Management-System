@@ -27,10 +27,10 @@ public class MenuManager {
         menuList.add(new Snack("Donut", 20,"Snack"));
     }
     //แสดงเมนู
-    public void showMenu() {
+    public void showMenu() { 
         System.out.println("\n<<----------|| MENU ||---------->>");
-        int i = 1;
-        for (MenuItem item : menuList) {
+        int i = 1; 
+        for (MenuItem item : menuList) { //ใช้ for loop เพราะว่าจะได้แสดง MenuItem ได้ครบ
             System.out.printf("%d. %-15s %6.2f ฿ (%s)\n", i++, item.getName(), item.getPrice(),item.getType());
         }
         
