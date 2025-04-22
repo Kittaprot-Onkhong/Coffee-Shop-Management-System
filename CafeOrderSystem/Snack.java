@@ -6,8 +6,8 @@ public class Snack extends MenuItem {
     }
 
     @Override
-    public String getCategory() {
+    public String getCategory() { //มาถูกเรียกจาก MenuManger
         return "Snack"; // override แสดงหมวด
     }
 }
-
+//เหมือนกันกลับ Coffee
